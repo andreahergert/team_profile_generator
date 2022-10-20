@@ -1,6 +1,27 @@
 {
+  "name": "team_profile_generator",
+  "description": "## Licensing: [![license](https://img.shields.io/badge/license-MIT-blue)](https://shields.io)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "jest"
+  },
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "inquirer": "^8.2.4",
     "jest": "^29.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreahergert/team_profile_generator.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreahergert/team_profile_generator/issues"
+  },
+  "homepage": "https://github.com/andreahergert/team_profile_generator#readme"
 }
