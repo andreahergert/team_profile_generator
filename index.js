@@ -8,6 +8,8 @@ const Manager = require('./lib/manager');
 
 const templatePage = require('./src/template');
 
+const teamArray = []
+
 function employeeQuestions() {
     inquirer
         .prompt([
@@ -43,5 +45,33 @@ function employeeQuestions() {
         }
     })
 };
-// Finish function for managerQuestions engineerQuestions internQuestions
+
+function managerQuestions(teamAnswers) {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'officeNumber',
+                message: 'What is their office number?',
+            },
+            {
+                type: 'confirm',
+                name: 'addAnother',
+                message: 'Would you like to add another employee?',
+            }
+        ])
+        .then(function (answers){
+            const newManager = new Manager(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.officeNumber);
+            teamArray.push(newManager);
+            if (answers.addAnother === true) {
+                employeeQuestions()
+            } else {
+                buildTeam();
+                console.log("Employee added!")
+            }
+        })
+};
+// Finish function for engineerQuestions internQuestions
+
+// Need buildTeam() function
 employeeQuestions();
