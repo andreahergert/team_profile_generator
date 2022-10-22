@@ -71,7 +71,57 @@ function managerQuestions(teamAnswers) {
             }
         })
 };
-// Finish function for engineerQuestions internQuestions
+// Finish function for internQuestions
+function engineerQuestions(teamAnswers) {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'github',
+                message: 'What is their GitHub username?',
+            },
+            {
+                type: 'confirm',
+                name: 'addAnother',
+                message: 'Would you like to add another employee?',
+            }
+        ])
+        .then(function (answers){
+            const newEngineer = new Engineer(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.github);
+            teamArray.push(newEngineer);
+            if (answers.addAnother === true) {
+                employeeQuestions()
+            } else {
+                buildTeam();
+                console.log("Employee added!")
+            }
+        })
+};
 
-// Need buildTeam() function
+function internQuestions(teamAnswers) {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'school',
+                message: 'Where do/did they go to school?',
+            },
+            {
+                type: 'confirm',
+                name: 'addAnother',
+                message: 'Would you like to add another employee?',
+            }
+        ])
+        .then(function (answers){
+            const newIntern = new Intern(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.school);
+            teamArray.push(newIntern);
+            if (answers.addAnother === true) {
+                employeeQuestions()
+            } else {
+                buildTeam();
+                console.log("Employee added!")
+            }
+        })
+};
+// Need buildTeam() function to write file
 employeeQuestions();
