@@ -13,37 +13,37 @@ const teamArray = []
 function employeeQuestions() {
     inquirer
         .prompt([
-        {
-            type: 'input',
-            name: 'name',
-            message: 'What is the name of the employee?',
-        },
-        {
-            type: 'input',
-            name: 'id',
-            message: 'What is the id number of the employee?',
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: 'What is the email address of the employee?',
-        },
-        {
-            type: 'list',
-            name: 'role',
-            message: 'Which is the role of this employee?',
-            choices: ["Manager", "Engineer", "Intern",],
-        },
-    ])
-    .then(function (answers) {
-        if (answers.role === "Manager") {
-            managerQuestions(answers);
-        } else if (answers.role === "Engineer") {
-            engineerQuestions(answers);
-        } else {
-            internQuestions(answers);
-        }
-    })
+            {
+                type: 'input',
+                name: 'name',
+                message: 'What is the name of the employee?',
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: 'What is the id number of the employee?',
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'What is the email address of the employee?',
+            },
+            {
+                type: 'list',
+                name: 'role',
+                message: 'Which is the role of this employee?',
+                choices: ["Manager", "Engineer", "Intern",],
+            },
+        ])
+        .then(function (answers) {
+            if (answers.role === "Manager") {
+                managerQuestions(answers);
+            } else if (answers.role === "Engineer") {
+                engineerQuestions(answers);
+            } else {
+                internQuestions(answers);
+            }
+        })
 };
 
 function managerQuestions(teamAnswers) {
@@ -60,7 +60,7 @@ function managerQuestions(teamAnswers) {
                 message: 'Would you like to add another employee?',
             }
         ])
-        .then(function (answers){
+        .then(function (answers) {
             const newManager = new Manager(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.officeNumber);
             teamArray.push(newManager);
             if (answers.addAnother === true) {
@@ -71,7 +71,7 @@ function managerQuestions(teamAnswers) {
             }
         })
 };
-// Finish function for internQuestions
+
 function engineerQuestions(teamAnswers) {
     inquirer
         .prompt([
@@ -86,7 +86,7 @@ function engineerQuestions(teamAnswers) {
                 message: 'Would you like to add another employee?',
             }
         ])
-        .then(function (answers){
+        .then(function (answers) {
             const newEngineer = new Engineer(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.github);
             teamArray.push(newEngineer);
             if (answers.addAnother === true) {
@@ -112,7 +112,7 @@ function internQuestions(teamAnswers) {
                 message: 'Would you like to add another employee?',
             }
         ])
-        .then(function (answers){
+        .then(function (answers) {
             const newIntern = new Intern(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.school);
             teamArray.push(newIntern);
             if (answers.addAnother === true) {
@@ -123,5 +123,33 @@ function internQuestions(teamAnswers) {
             }
         })
 };
-// Need buildTeam() function to write file
+
 employeeQuestions();
+
+// This needs to be fixed not working need a build team function
+
+// buildTeam() = data => {
+//     fs.writeFile('./dist/index.html', data, err => {
+//         if (err) {
+//             console.log(err);
+//             return;
+//         } else {
+//             console.log("Your team profile has been created in dist/index.html")
+//         }
+//     })
+// };
+
+
+// buildTeam()
+//     .then(addEmployee)
+//     .then(teamArray => {
+//         return templatePage(teamArray);
+//     })
+//     .then(pageHTML => {
+//         return writeFile(pageHTML);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
+
+
