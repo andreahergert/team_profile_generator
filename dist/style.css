@@ -2,7 +2,7 @@ body {
     display:flex; flex-direction:column; justify-content:center;
   }
 
-header {
+.heading {
     background-color: rgb(12, 49, 7);
 }
 
@@ -11,14 +11,16 @@ h1 {
     color: white;
 }
 
+h2, h3 {
+    text-align:center;
+}
 
+.card-header {
+    background-color: aquamarine;
+}
 
-/* .employee-card {
-    box-shadow: 5px 5px 5px gray;
+.employee-card {
+    box-shadow: 5px 5px 5px 5px gray;
     margin: 1rem;
     border: none;
 }
-
-.card-body {
-    background-color: rgb(240, 240, 240);
-} */
