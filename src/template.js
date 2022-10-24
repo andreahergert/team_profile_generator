@@ -49,7 +49,7 @@ function templatePage(data) {
                             <li class="list-group-item">Email: <a
                                     href="mailto:${data.email}">${data.email}</a></li>
                             <li class="list-group-item">GitHub: <a href="https://github.com/${data.github}"
-                                    target="_blank" rel="noopener noreferrer">andreahergert</a></li>
+                                    target="_blank" rel="noopener noreferrer">${data.github}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ function templatePage(data) {
                             <li class="list-group-item">Email: <a
                                     href="mailto:${data.email}">${data.email}</a></li>
                             <li class="list-group-item">GitHub: <a href="https://github.com/${data.github}"
-                                    target="_blank" rel="noopener noreferrer">andreahergert</a></li>
+                                    target="_blank" rel="noopener noreferrer">${data.github}</a></li>
                         </ul>
                     </div>
                 </div>
