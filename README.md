@@ -28,7 +28,7 @@ This is a team profile generator created in the UW Coding Bootcamp that creates 
 
 Screenshot:
 
-![Screenshot](assets/img/screenshot.jpg)
+![Screenshot](assets/img/screenshot.png)
 
 Link to Video of Walkthrough for Demonstration:
 
