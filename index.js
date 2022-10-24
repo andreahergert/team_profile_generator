@@ -124,32 +124,15 @@ function internQuestions(teamAnswers) {
         })
 };
 
+function buildTeam() {
+    fs.writeFile('./dist/index.html', templatePage(teamArray), err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your team profile has been created in dist/index.html")
+        }
+    })
+};
+
 employeeQuestions();
-
-// This needs to be fixed not working need a build team function
-
-// buildTeam() = data => {
-//     fs.writeFile('./dist/index.html', data, err => {
-//         if (err) {
-//             console.log(err);
-//             return;
-//         } else {
-//             console.log("Your team profile has been created in dist/index.html")
-//         }
-//     })
-// };
-
-
-// buildTeam()
-//     .then(addEmployee)
-//     .then(teamArray => {
-//         return templatePage(teamArray);
-//     })
-//     .then(pageHTML => {
-//         return writeFile(pageHTML);
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     });
-
-
