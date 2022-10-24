@@ -1,5 +1,5 @@
 // template to help make html code that generates team
-function templatePage(data) {
+function templatePage({name, role, id, email, officeNumber, github, school}) {
     return `<!DOCTYPE html>
 <html lang="en">
 
@@ -25,77 +25,77 @@ function templatePage(data) {
             <div class="row team-area col-12 d-flex justify-content-center">
                 <div class="card employee-card m-2">
                     <div class="card-header">
-                        <h2 class="card-title">${data.name}</h2>
-                        <h3 class="card-title">${data.role}</h3>
+                        <h2 class="card-title">${name}</h2>
+                        <h3 class="card-title">${role}</h3>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item">ID: ${data.id}</li>
+                            <li class="list-group-item">ID: ${id}</li>
                             <li class="list-group-item">Email: <a
-                                    href="mailto:${data.email}">${data.email}</a></li>
-                            <li class="list-group-item">Office Number: ${data.officeNumber}</li>
+                                    href="mailto:${email}">${email}</a></li>
+                            <li class="list-group-item">Office Number: ${officeNumber}</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card employee-card m-2">
                     <div class="card-header">
-                        <h2 class="card-title">${data.name}</h2>
-                        <h3 class="card-title">${data.role}</h3>
+                        <h2 class="card-title">${name}</h2>
+                        <h3 class="card-title">${role}</h3>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item">ID: ${data.id}</li>
+                            <li class="list-group-item">ID: ${id}</li>
                             <li class="list-group-item">Email: <a
-                                    href="mailto:${data.email}">${data.email}</a></li>
-                            <li class="list-group-item">GitHub: <a href="https://github.com/${data.github}"
-                                    target="_blank" rel="noopener noreferrer">${data.github}</a></li>
+                                    href="mailto:${email}">${email}</a></li>
+                            <li class="list-group-item">GitHub: <a href="https://github.com/${github}"
+                                    target="_blank" rel="noopener noreferrer">${github}</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card employee-card m-2">
                     <div class="card-header">
-                        <h2 class="card-title">${data.name}</h2>
-                        <h3 class="card-title">${data.role}</h3>
+                        <h2 class="card-title">${name}</h2>
+                        <h3 class="card-title">${role}</h3>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item">ID: ${data.id}</li>
+                            <li class="list-group-item">ID: ${id}</li>
                             <li class="list-group-item">Email: <a
-                                    href="mailto:${data.email}">${data.email}</a></li>
-                            <li class="list-group-item">GitHub: <a href="https://github.com/${data.github}"
-                                    target="_blank" rel="noopener noreferrer">${data.github}</a></li>
+                                    href="mailto:${email}">${email}</a></li>
+                            <li class="list-group-item">GitHub: <a href="https://github.com/${github}"
+                                    target="_blank" rel="noopener noreferrer">${github}</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card employee-card m-2">
                     <div class="card-header">
-                        <h2 class="card-title">${data.name}</h2>
-                        <h3 class="card-title">${data.role}</h3>
+                        <h2 class="card-title">${name}</h2>
+                        <h3 class="card-title">${role}</h3>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item">ID: ${data.id}</li>
+                            <li class="list-group-item">ID: ${id}</li>
                             <li class="list-group-item">Email: <a
-                                    href="mailto:${data.email}">${data.email}</a></li>
-                            <li class="list-group-item">School: ${data.school}</li>
+                                    href="mailto:${email}">${email}</a></li>
+                            <li class="list-group-item">School: ${school}</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card employee-card m-2">
                     <div class="card-header">
-                        <h2 class="card-title">${data.name}</h2>
-                        <h3 class="card-title">${data.role}</h3>
+                        <h2 class="card-title">${name}</h2>
+                        <h3 class="card-title">${role}</h3>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item">ID: ${data.id}</li>
+                            <li class="list-group-item">ID: ${id}</li>
                             <li class="list-group-item">Email: <a
-                                    href="mailto:${data.email}">${data.email}</a></li>
-                            <li class="list-group-item">School: ${data.school}</li>
+                                    href="mailto:${email}">${email}</a></li>
+                            <li class="list-group-item">School: ${school}</li>
                         </ul>
                     </div>
                 </div>

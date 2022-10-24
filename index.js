@@ -46,7 +46,7 @@ function employeeQuestions() {
         })
 };
 
-function managerQuestions(teamAnswers) {
+function managerQuestions(managerAnswers) {
     inquirer
         .prompt([
             {
@@ -61,9 +61,10 @@ function managerQuestions(teamAnswers) {
             }
         ])
         .then(function (answers) {
-            const newManager = new Manager(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.officeNumber);
+            const newManager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
             teamArray.push(newManager);
             if (answers.addAnother === true) {
+                console.log("Employee added!")
                 employeeQuestions()
             } else {
                 buildTeam();
@@ -72,7 +73,7 @@ function managerQuestions(teamAnswers) {
         })
 };
 
-function engineerQuestions(teamAnswers) {
+function engineerQuestions(engineerAnswers) {
     inquirer
         .prompt([
             {
@@ -87,9 +88,10 @@ function engineerQuestions(teamAnswers) {
             }
         ])
         .then(function (answers) {
-            const newEngineer = new Engineer(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.github);
+            const newEngineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
             teamArray.push(newEngineer);
             if (answers.addAnother === true) {
+                console.log("Employee added!")
                 employeeQuestions()
             } else {
                 buildTeam();
@@ -98,7 +100,7 @@ function engineerQuestions(teamAnswers) {
         })
 };
 
-function internQuestions(teamAnswers) {
+function internQuestions(internAnswers) {
     inquirer
         .prompt([
             {
@@ -113,9 +115,10 @@ function internQuestions(teamAnswers) {
             }
         ])
         .then(function (answers) {
-            const newIntern = new Intern(teamAnswers.name, teamAnswers.id, teamAnswers.email, answers.school);
+            const newIntern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
             teamArray.push(newIntern);
             if (answers.addAnother === true) {
+                console.log("Employee added!")
                 employeeQuestions()
             } else {
                 buildTeam();
