@@ -18,7 +18,7 @@ This is a team profile generator created in the UW Coding Bootcamp that creates 
 ## Installation:
 - Download it through Github
 - Ensure inquirer is installed
-- Ensure just is installed for testing
+- Ensure jest is installed for testing
 
 ## Usage:
 - Open terminal and navigate to correct folder
