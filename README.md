@@ -32,7 +32,7 @@ Screenshot:
 
 Link to Video of Walkthrough for Demonstration:
 
-https://youtu.be/tOygXAJdhWQ
+https://youtu.be/4wdfgnIn1aA
 
 ## License:
 MIT
