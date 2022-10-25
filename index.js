@@ -61,7 +61,7 @@ function managerQuestions(managerAnswers) {
             }
         ])
         .then(function (answers) {
-            const newManager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
+            const newManager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, answers.officeNumber);
             teamArray.push(newManager);
             if (answers.addAnother === true) {
                 console.log("Employee added!")
@@ -88,7 +88,7 @@ function engineerQuestions(engineerAnswers) {
             }
         ])
         .then(function (answers) {
-            const newEngineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
+            const newEngineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, answers.github);
             teamArray.push(newEngineer);
             if (answers.addAnother === true) {
                 console.log("Employee added!")
@@ -115,7 +115,7 @@ function internQuestions(internAnswers) {
             }
         ])
         .then(function (answers) {
-            const newIntern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
+            const newIntern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, answers.school);
             teamArray.push(newIntern);
             if (answers.addAnother === true) {
                 console.log("Employee added!")

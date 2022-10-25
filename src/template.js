@@ -1,5 +1,58 @@
 // template to help make html code that generates team
-function templatePage({name, role, id, email, officeNumber, github, school}) {
+function templatePage(data) {
+    // console.log('DATA', data) to check if things are working
+    let htmllist = []
+    for(let i = 0; i < data.length; i++){
+        console.log(data[i])
+        if (data[i].getRole() === "Manager"){
+            htmllist.push(`<div class="card employee-card m-2">
+            <div class="card-header">
+                <h2 class="card-title">${data[i].name}</h2>
+                <h3 class="card-title">${data[i].getRole()}</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">ID: ${data[i].id}</li>
+                    <li class="list-group-item">Email: <a
+                            href="mailto:${data[i].email}">${data[i].email}</a></li>
+                            <li class="list-group-item">Office Number: ${data[i].getOfficeNumber()}</li>
+                </ul>
+            </div>
+        </div>`)
+        } else if  (data[i].getRole() === "Engineer") {
+            htmllist.push(`<div class="card employee-card m-2">
+                <div class="card-header">
+                    <h2 class="card-title">${data[i].name}</h2>
+                    <h3 class="card-title">${data[i].getRole()}</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">ID: ${data[i].id}</li>
+                        <li class="list-group-item">Email: <a
+                                href="mailto:${data[i].email}">${data[i].email}</a></li>
+                                <li class="list-group-item">GitHub: <a href="https://github.com/${data[i].getGithub()}"
+                                    target="_blank" rel="noopener noreferrer">${data[i].getGithub()}</a></li></li>
+                    </ul>
+                </div>
+            </div>`)
+        }
+        else {
+            htmllist.push(`<div class="card employee-card m-2">
+            <div class="card-header">
+                <h2 class="card-title">${data[i].name}</h2>
+                <h3 class="card-title">${data[i].getRole()}</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">ID: ${data[i].id}</li>
+                    <li class="list-group-item">Email: <a
+                            href="mailto:${data[i].email}">${data[i].email}</a></li>
+                            <li class="list-group-item">School: ${data[i].getSchool()}</li>
+                </ul>
+            </div>
+        </div>`)
+        }
+    }
     return `<!DOCTYPE html>
 <html lang="en">
 
@@ -23,83 +76,7 @@ function templatePage({name, role, id, email, officeNumber, github, school}) {
     <div class="container">
         <div class="row">
             <div class="row team-area col-12 d-flex justify-content-center">
-                <div class="card employee-card m-2">
-                    <div class="card-header">
-                        <h2 class="card-title">${name}</h2>
-                        <h3 class="card-title">${role}</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email: <a
-                                    href="mailto:${email}">${email}</a></li>
-                            <li class="list-group-item">Office Number: ${officeNumber}</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card employee-card m-2">
-                    <div class="card-header">
-                        <h2 class="card-title">${name}</h2>
-                        <h3 class="card-title">${role}</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email: <a
-                                    href="mailto:${email}">${email}</a></li>
-                            <li class="list-group-item">GitHub: <a href="https://github.com/${github}"
-                                    target="_blank" rel="noopener noreferrer">${github}</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card employee-card m-2">
-                    <div class="card-header">
-                        <h2 class="card-title">${name}</h2>
-                        <h3 class="card-title">${role}</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email: <a
-                                    href="mailto:${email}">${email}</a></li>
-                            <li class="list-group-item">GitHub: <a href="https://github.com/${github}"
-                                    target="_blank" rel="noopener noreferrer">${github}</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card employee-card m-2">
-                    <div class="card-header">
-                        <h2 class="card-title">${name}</h2>
-                        <h3 class="card-title">${role}</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email: <a
-                                    href="mailto:${email}">${email}</a></li>
-                            <li class="list-group-item">School: ${school}</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card employee-card m-2">
-                    <div class="card-header">
-                        <h2 class="card-title">${name}</h2>
-                        <h3 class="card-title">${role}</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Email: <a
-                                    href="mailto:${email}">${email}</a></li>
-                            <li class="list-group-item">School: ${school}</li>
-                        </ul>
-                    </div>
-                </div>
-
+            ${htmllist}
             </div>
         </div>
     </div>
